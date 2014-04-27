@@ -1,0 +1,110 @@
+
+pack.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+background
+  rotate: false
+  xy: 1, 100
+  size: 1080, 1920
+  orig: 1080, 1920
+  offset: 0, 0
+  index: -1
+txt_collision
+  rotate: false
+  xy: 1, 1
+  size: 740, 97
+  orig: 740, 97
+  offset: 0, 0
+  index: -1
+txt_game_over
+  rotate: false
+  xy: 1083, 1929
+  size: 708, 91
+  orig: 708, 91
+  offset: 0, 0
+  index: -1
+score_table
+  rotate: false
+  xy: 1083, 1675
+  size: 219, 252
+  orig: 219, 252
+  offset: 0, 0
+  index: -1
+txt_start
+  rotate: false
+  xy: 743, 65
+  size: 290, 33
+  orig: 290, 33
+  offset: 0, 0
+  index: -1
+btn_play
+  rotate: false
+  xy: 1083, 1524
+  size: 149, 149
+  orig: 149, 149
+  offset: 0, 0
+  index: -1
+btn_play_pressed
+  rotate: false
+  xy: 1304, 1778
+  size: 149, 149
+  orig: 149, 149
+  offset: 0, 0
+  index: -1
+ball_blue
+  rotate: false
+  xy: 1793, 1940
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+ball_red
+  rotate: false
+  xy: 1083, 1442
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+ind_start
+  rotate: false
+  xy: 1304, 1704
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+txt_new
+  rotate: false
+  xy: 743, 9
+  size: 83, 54
+  orig: 83, 54
+  offset: 0, 0
+  index: -1
+btn_rate
+  rotate: false
+  xy: 1234, 1613
+  size: 63, 60
+  orig: 63, 60
+  offset: 0, 0
+  index: -1
+btn_rate_pressed
+  rotate: false
+  xy: 1455, 1867
+  size: 63, 60
+  orig: 63, 60
+  offset: 0, 0
+  index: -1
+btn_exit
+  rotate: false
+  xy: 1875, 1960
+  size: 61, 60
+  orig: 61, 60
+  offset: 0, 0
+  index: -1
+btn_exit_pressed
+  rotate: false
+  xy: 1083, 1380
+  size: 61, 60
+  orig: 61, 60
+  offset: 0, 0
+  index: -1
