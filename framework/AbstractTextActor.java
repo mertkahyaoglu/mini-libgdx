@@ -6,11 +6,11 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 public abstract class AbstractTextActor extends Actor{
-	
+
 	private BitmapFont font;
 	private Color color;
 	private String str;
-	
+
 	public AbstractTextActor(BitmapFont font, Color color, String str, float posX, float posY, float width, float height, float scaleX, float scaleY){
 		this.font = font;
 		this.color = color;
@@ -31,7 +31,7 @@ public abstract class AbstractTextActor extends Actor{
 	}
 
 	public BitmapFont getFont() {
-		return font;
+		return this.font;
 	}
 
 	public void setFont(BitmapFont font) {
@@ -39,7 +39,7 @@ public abstract class AbstractTextActor extends Actor{
 	}
 
 	public Color getColor() {
-		return color;
+		return this.color;
 	}
 
 	public void setColor(Color color) {
@@ -47,11 +47,11 @@ public abstract class AbstractTextActor extends Actor{
 	}
 
 	public String getStr() {
-		return str;
+		return this.str;
 	}
 
 	public void setStr(String str) {
 		this.str = str;
 	}
-	
+
 }

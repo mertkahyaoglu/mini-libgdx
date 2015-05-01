@@ -11,40 +11,42 @@ import com.mert.framework.interfaces.IScreen;
 import com.mert.framework.models.BasicActor;
 
 public abstract class AbstractGameScreen extends AbstractScreen implements IScreen {
-	
+
 	private TextureAtlas atlas;
 	private BasicActor backgroundActor;
 	private boolean gameStarted;
 	private float gameStartTime;
-	
+
 	public AbstractGameScreen(AbstractGame game) {
 		super(game);
 		Gdx.input.setCatchBackKey(true);
 		gameStartTime = 0;
 		atlas = getAssetManager().get(Assets.atlas);
-		
+
 		setUp();
 	}
 
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-		if(gameStarted) gameStartTime += delta; 
+		if(gameStarted) {
+				gameStartTime += delta;
+		}
 		if (Gdx.input.isKeyPressed(Keys.BACK)){
 			  getGame().setScreen(new MenuScreen(getGame()));
 		}
 		render();
 	}
-	
+
 	public void setBackground(String path) {
 		TextureRegion region = atlas.findRegion(path);
 		backgroundActor = new BasicActor(region, 0, 0, getWidth(), getHeight());
 		getStage().addActor(backgroundActor);
 	}
-	
-	
+
+
 	public TextureAtlas getAtlas() {
-		return atlas;
+		return this.atlas;
 	}
 
 	public void setAtlas(TextureAtlas atlas) {
@@ -52,7 +54,7 @@ public abstract class AbstractGameScreen extends AbstractScreen implements IScre
 	}
 
 	public float getGameStartTime() {
-		return gameStartTime;
+		return this.gameStartTime;
 	}
 
 	public void setGameStartTime(float gameStartTime) {
@@ -60,13 +62,13 @@ public abstract class AbstractGameScreen extends AbstractScreen implements IScre
 	}
 
 	public boolean isGameStarted() {
-		return gameStarted;
+		return this.gameStarted;
 	}
 
 	public void setGameStarted(boolean gameStarted) {
 		this.gameStarted = gameStarted;
 	}
-	
+
 	@Override
 	public void dispose() {
 		super.dispose();

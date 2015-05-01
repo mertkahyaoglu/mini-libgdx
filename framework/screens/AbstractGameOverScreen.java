@@ -9,10 +9,10 @@ import com.mert.framework.interfaces.IScreen;
 import com.mert.framework.models.BasicActor;
 
 public abstract class AbstractGameOverScreen extends AbstractScreen implements IScreen {
-	
+
 	private TextureAtlas atlas;
 	private BasicActor backgroundActor;
-	
+
 	public AbstractGameOverScreen(AbstractGame game) {
 		super(game);
 		atlas = getAssetManager().get(Assets.atlas);
@@ -26,7 +26,7 @@ public abstract class AbstractGameOverScreen extends AbstractScreen implements I
 		//
 		render();
 	}
-	
+
 	public void setBackground(String path) {
 		TextureRegion region = atlas.findRegion(path);
 		backgroundActor = new BasicActor(region, 0, 0, getWidth(), getHeight());
@@ -40,12 +40,12 @@ public abstract class AbstractGameOverScreen extends AbstractScreen implements I
 	}
 
 	public TextureAtlas getAtlas() {
-		return atlas;
+		return this.atlas;
 	}
 
 	public void setAtlas(TextureAtlas atlas) {
 		this.atlas = atlas;
 	}
-	
-	
+
+
 }

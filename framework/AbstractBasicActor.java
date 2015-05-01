@@ -6,9 +6,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 public abstract class AbstractBasicActor extends Actor {
-	
-	TextureRegion textureRegion = null;
-	Texture texture = null;
+
+	private TextureRegion textureRegion = null;
+	private Texture texture = null;
 	public AbstractBasicActor(TextureRegion textureRegion, float posX, float posY,float width, float height){
 		super();
 		this.textureRegion = textureRegion;
@@ -17,7 +17,7 @@ public abstract class AbstractBasicActor extends Actor {
 		setSize(width, height);
 		setOrigin(width/2, height/2);
 	}
-	
+
 	public AbstractBasicActor(Texture texture, float posX, float posY, float width, float height){
 		super();
 		this.texture = texture;
@@ -26,9 +26,9 @@ public abstract class AbstractBasicActor extends Actor {
 		setSize(width, height);
 		setOrigin(width/2, height/2);
 	}
-	
-	
-	
+
+
+
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
@@ -36,7 +36,7 @@ public abstract class AbstractBasicActor extends Actor {
 		batch.setColor(this.getColor().r, this.getColor().g, this.getColor().b,
 				parentAlpha);
 		if(textureRegion != null)
-			batch.draw(textureRegion, getX(), getY(), 
+			batch.draw(textureRegion, getX(), getY(),
 				getOriginX(), getOriginY(),  getWidth(), getHeight(), getScaleX(), getScaleY(), getRotation());
 		if(texture != null)
 			batch.draw(texture, getX(), getY(), getHeight(), getHeight());
@@ -51,7 +51,7 @@ public abstract class AbstractBasicActor extends Actor {
 	}
 
 	public Texture getTexture() {
-		return texture;
+		return this.texture;
 	}
 
 	public void setTexture(Texture texture) {

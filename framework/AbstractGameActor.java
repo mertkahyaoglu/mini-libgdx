@@ -8,9 +8,9 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.mert.framework.interfaces.IActor;
 
 public abstract class AbstractGameActor extends Actor implements IActor {
-	
-	TextureRegion region;
-	Rectangle bounds;
+
+	private TextureRegion region;
+	private Rectangle bounds;
 	public AbstractGameActor(TextureRegion region, float x, float y, float width, float height, float scaleX, float scaleY) {
 		this.region = region;
 		setPosition(x, y);
@@ -26,7 +26,7 @@ public abstract class AbstractGameActor extends Actor implements IActor {
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
-		
+
 		batch.draw(region, getX(), getY(), getOriginX(), getOriginY(),getWidth(), getHeight(), getScaleX(), getScaleY(), getRotation());
 	}
 
@@ -35,18 +35,18 @@ public abstract class AbstractGameActor extends Actor implements IActor {
 		super.act(delta);
 		update();
 	}
-	
+
 	public Vector2 getPosition() {
 		return new Vector2(getX(),getY());
 	}
-	
+
 	public void setPosition(float x, float y){
 		setX(x);
 		setY(y);
 	}
-	
+
 	public TextureRegion getRegion() {
-		return region;
+		return this.region;
 	}
 
 	public void setRegion(TextureRegion region) {
@@ -54,11 +54,11 @@ public abstract class AbstractGameActor extends Actor implements IActor {
 	}
 
 	public Rectangle getBounds() {
-		return bounds;
+		return this.bounds;
 	}
 
 	public void setBounds(Rectangle bounds) {
 		this.bounds = bounds;
 	}
-	
+
 }

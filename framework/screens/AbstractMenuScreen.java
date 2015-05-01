@@ -9,10 +9,10 @@ import com.mert.framework.interfaces.IScreen;
 import com.mert.framework.models.BasicActor;
 
 public abstract class AbstractMenuScreen extends AbstractScreen implements IScreen {
-	
+
 	private TextureAtlas atlas;
 	private BasicActor backgroundActor;
-	
+
 	public AbstractMenuScreen(AbstractGame game) {
 		super(game);
 		Gdx.input.setCatchBackKey(false);
@@ -27,15 +27,15 @@ public abstract class AbstractMenuScreen extends AbstractScreen implements IScre
 		//
 		render();
 	}
-	
+
 	public void setBackground(String path) {
 		TextureRegion region = atlas.findRegion(path);
 		backgroundActor = new BasicActor(region, 0, 0, getWidth(), getHeight());
 		getStage().addActor(backgroundActor);
 	}
-	
+
 	public TextureAtlas getAtlas() {
-		return atlas;
+		return this.atlas;
 	}
 
 	public void setAtlas(TextureAtlas atlas) {

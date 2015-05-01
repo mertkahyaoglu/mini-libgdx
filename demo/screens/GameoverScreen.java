@@ -25,20 +25,16 @@ public class GameoverScreen extends AbstractGameOverScreen{
 	private TextActor score_game;
 	private TextActor score_best;
 	private Preferences prefs;
-	
+
 	public GameoverScreen(AbstractGame game) {
 		super(game);
-		
 	}
 
 	@Override
 	public void setUp() {
-		
-		//
 		setBackground(Assets.atlas_background);
-		
 		prefs = Gdx.app.getPreferences("gamePrefs");
-		
+
 		//Play Button Settings
 		TextureRegion btnPlayRegion = getAtlas().findRegion(Assets.atlas_button_play);
 		final float regPW = btnPlayRegion.getRegionWidth();
@@ -57,21 +53,21 @@ public class GameoverScreen extends AbstractGameOverScreen{
 				score_game.addAction(Actions.moveTo(score_game.getX(), getHeight() + table_score.getHeight(), 0.3f));
 				score_best.addAction(Actions.moveTo(score_game.getX(), getHeight() + table_score.getHeight(), 0.3f));
 				btn_play.addAction(Actions.moveTo(getWidth(), btn_play.getY(), 0.3f));
-				btn_exit.addAction(Actions.sequence(Actions.moveTo(getWidth(), btn_exit.getY(), 0.3f), 
+				btn_exit.addAction(Actions.sequence(Actions.moveTo(getWidth(), btn_exit.getY(), 0.3f),
 						Actions.run(new Runnable() {
-					
+
 					@Override
 					public void run() {
 						getGame().setScreen(new GameScreen(getGame()));
 					}
-					
+
 				})));
 
 			}
-			
+
 		});
 		getStage().addActor(btn_play);
-		
+
 		//Exit Button Settings
 		TextureRegion btnExitRegion = getAtlas().findRegion(Assets.atlas_button_exit);
 		final float regEW = btnExitRegion.getRegionWidth();
@@ -85,30 +81,30 @@ public class GameoverScreen extends AbstractGameOverScreen{
 
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-			
+
 				Gdx.app.exit();
-				
+
 			}
-			
+
 		});
 		getStage().addActor(btn_exit);
-		
+
 		//Score Table
 		TextureRegion tblScoreRegion = getAtlas().findRegion(Assets.atlas_score_table);
 		table_score = new Image(tblScoreRegion);
 		table_score.setPosition(0 , getHeight());
 		getStage().addActor(table_score);
 		//
-		
+
 		score_game = new TextActor(getAssetManager().get(Assets.font, BitmapFont.class), Color.CYAN, Integer.toString(prefs.getInteger("score", 0)) , table_score.getX() + table_score.getWidth() / 2 - 20f, getHeight() + table_score.getHeight() * 0.75f,
 				48f, 48f, 1f, 1f);
 		getStage().addActor(score_game);
-		
+
 		score_best = new TextActor(getAssetManager().get(Assets.font, BitmapFont.class), Color.RED, Integer.toString(prefs.getInteger("best", 0)) , table_score.getX() + table_score.getWidth() / 2 - 20f, getHeight() + table_score.getHeight() * 0.25f,
 				48f, 48f, 1f, 1f);
 		getStage().addActor(score_best);
-		
-		
+
+
 		//Game Over Text
 		TextureRegion txtRegion = getAtlas().findRegion(Assets.atlas_text_game_over);
 		txt_gameover = new Image(txtRegion);
@@ -131,10 +127,7 @@ public class GameoverScreen extends AbstractGameOverScreen{
 
 				})));
 
-		getStage().addActor(txt_gameover);
-		//
-		
-		
+		getStage().addActor(txt_gameover);	
 	}
 
 	@Override
