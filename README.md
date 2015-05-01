@@ -1,5 +1,9 @@
-Collision
+mini-libgdx
 =========
+
+This is a mini game framework built on top of LibGDX. I needed to write my own framework because whenever I wanted to write a basic game, I had to write some codes over and over again. Here is a demo game built with it.
+
+###Demo Game - Collision
 
 Collision is a skill and attention seeking game. You need to avoid collision with red balls as long as you can.
 
